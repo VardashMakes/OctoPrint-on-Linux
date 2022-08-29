@@ -27,15 +27,16 @@ sudo apt install ssh openssh-server openssh-client net-tools build-essential lin
 sudo adduser pi
 ```
 
-## Add Pi to sudo group
+## Add pi User to sudo group
 ```
 sudo usermod -aG sudo pi
 ```
 
-## Add pi User to Serial Ports
+## Add pi User to Serial Ports & Video Devices
 ```
 sudo usermod -aG tty pi
 sudo usermod -aG dialout pi
+sudo usermod -aG video pi
 ```
 
 ## Add pi User to sudoers files so it can run shutdown commands without Password promt
@@ -102,7 +103,7 @@ sudo systemctl enable octoprint.service
 
 ### You can get the status with
 ```
-sudo service octoprint {start|stop|restart }
+sudo service octoprint {start|stop|restart|status }
 ```
 
 
@@ -134,12 +135,13 @@ backend webcam
         http-request replace-path /webcam/(.*)   /\1
         server webcam1  127.0.0.1:8080
 ```
+### press CTRL+X to save and exit the file
 
 # Install/Setup Webcam Support
 ## Build mjpg-streamer
 ```
 cd ~
-sudo apt install subversion libjpeg62-turbo-dev imagemagick ffmpeg libv4l-dev cmake
+sudo apt install subversion libjpeg62-turbo-dev imagemagick ffmpeg libv4l-dev cmake -y
 git clone https://github.com/jacksonliam/mjpg-streamer.git
 cd mjpg-streamer/mjpg-streamer-experimental
 export LD_LIBRARY_PATH=.
@@ -210,6 +212,7 @@ while true; do
     sleep 120
 done
 ```
+### press CTRL+X to save and exit the file
 
 ## Setup Permissions on webcam File
 ```
@@ -235,6 +238,8 @@ ExecStart=/home/pi/scripts/webcamDaemon
 [Install]
 WantedBy=multi-user.target
 ```
+### press CTRL+X to save and exit the file
+
 
 ## Enable the webcamd Service
 ```
