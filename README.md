@@ -258,3 +258,11 @@ Stream URL: /webcam/?action=stream
 Snapshot URL: http://127.0.0.1:8080/?action=snapshot
 Path to FFMPEG: /usr/bin/ffmpeg
 ```
+
+## Octoprint Commands
+```
+Restart OctoPrint: sudo service octoprint restart
+Restart system: sudo shutdown -r now
+Shutdown system: sudo shutdown -h now
+```
+![octoprint_commands](/assets/OctoPrint_Commands.png)
