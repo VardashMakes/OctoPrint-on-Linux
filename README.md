@@ -13,12 +13,12 @@ Many of the commands were provided by the [Octoprint community](https://communit
 
 ## Run Updates
 ```
-sudo apt-get update && sudo apt-get dist-upgrade -y
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade -y
 ```
 
 ## Install essential tools
 ```
-sudo apt install ssh openssh-server openssh-client net-tools build-essential linux-headers-$(uname -r) python3-pip python3-dev python3-setuptools python3-venv git libyaml-dev neofetch locate -y
+sudo apt install ssh openssh-server htop mc openssh-client net-tools build-essential linux-headers-$(uname -r) python3-pip python3-dev python3-setuptools python3-venv git libyaml-dev neofetch locate -y
 ```
 
 ## Add pi User 
